@@ -1,8 +1,28 @@
 # Malicious
 for Malicious list
+* IP
+  * ssh
+  * rdp(mstsc)
+  * http
+  * [Rescure](https://rescure.me/feeds.html)
+  
+Using iptables or firewalld or ipset
+  
 
-## IP
-ssh, mstsc brute force ip list
+## Init
+OS: CentOS
+### 1. iptables
+
+### 2. iptables, ipset
+
+### 3. firewalld
+
+### 4. firewalld, ipset
+
+## Scheduling
+```
+* * 0 * * 
+```
 
 ## Command
 

@@ -3,8 +3,6 @@
 HOME="."
 cd $HOME
 
-## pull latest git
-git --git-dir=$HOME/.git/ pull origin main
 cp blacklist_ip/ssh.txt .tmp
 echo Blacklist IP address count: $(cat .tmp| wc -w)
 
@@ -17,8 +15,3 @@ echo Added Blacklist IP address count: $(cat .tmp | wc -w)
 cat .tmp | sort -h | uniq > blacklist_ip/ssh.txt
 rm -f .tmp
 echo Uniq Blacklist IP address count: $(cat blacklist_ip/ssh.txt | wc -w)
-
-## Commit & push blacklist ssh ip addresses to github
-git add blacklist_ip/ssh.txt
-git commit -m  "[`date`] Commited by `hostname`"
-git push origin main

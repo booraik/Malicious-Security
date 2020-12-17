@@ -1,8 +1,14 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then
-  echo "Usage: ipset_to_blacklist.sh <ssh | rdp | http> <ipset name>"
+if [ $# -lt 2 ]; then
+  echo "Usage: ipset_to_blacklist.sh <ssh | rdp | http> <ipset name> [Home directory]"
   exit
+fi
+
+if [ $# -ge 3 ]; then
+  HOME=$3
+else
+  HOME="."
 fi
 
 HOME="."

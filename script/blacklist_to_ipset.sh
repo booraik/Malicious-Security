@@ -1,6 +1,10 @@
 #!/bin/bash
 
-HOME="."
+if [ $# -ge 1 ]; then
+  HOME=$1
+else
+  HOME="."
+fi
 
 ipset create blacklist_rdp hash:net hashsize 4096 2> /dev/null
 ipset create blacklist_ssh hash:net hashsize 4096 2> /dev/null

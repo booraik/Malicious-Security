@@ -1,6 +1,10 @@
 #!/bin/bash
 
-HOME="."
+if [ $# -ge 1 ]; then
+  HOME=$1
+else
+  HOME="."
+fi
 cd $HOME
 
 cp blacklist_ip/ssh.txt .tmp

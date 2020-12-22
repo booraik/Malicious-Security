@@ -5,6 +5,8 @@ if [ $# -lt 2 ]; then
   exit
 fi
 
+IPSET=/usr/sbin/ipset
+
 if [ $# -ge 3 ]; then
   HOME=$3
 else
@@ -20,7 +22,7 @@ IPSET_NAME=$2
 cp blacklist_ip/$TARGET.txt .tmp
 echo $TARGET Blacklist IP address count: $(cat .tmp| wc -w)
 
-NEW_IP=$(ipset save $IPSET_NAME | grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}")
+NEW_IP=$($IPSET save $IPSET_NAME | grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}")
 echo New Malicious IP address count: $(echo $NEW_IP | wc -w)
 
 printf "%s\n" "${NEW_IP[@]}" >> .tmp

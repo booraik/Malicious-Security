@@ -16,6 +16,6 @@ echo New Malicious IP address count: $(echo $NEW_IP | wc -w)
 printf "%s\n" "${NEW_IP[@]}" >> .tmp
 echo Added Blacklist IP address count: $(cat .tmp | wc -w)
 
-cat .tmp | sort -h | uniq > blacklist_ip/ssh.txt
+cat .tmp | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 | uniq > blacklist_ip/ssh.txt
 rm -f .tmp
 echo Uniq Blacklist IP address count: $(cat blacklist_ip/ssh.txt | wc -w)

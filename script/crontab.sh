@@ -24,3 +24,5 @@ git push origin main
 # 4. apply
 script/blacklist_to_ipset.sh
 fail2ban-client unban --all
+
+/sbin/iptables -Z

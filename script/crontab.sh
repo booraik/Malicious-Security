@@ -13,6 +13,8 @@ git --git-dir=$HOME/.git/ pull origin main
 # 2. update blacklist from local detection
 script/fail2ban_sshd_to_blacklist.sh
 script/ipset_to_blacklist.sh rdp blacklist_rdp
+script/ipset_to_blacklist.sh rdp blacklist_rdp
+script/ipset_to_blacklist.sh http blacklist_http
 
 # 3. commit && push
 git add blacklist_ip

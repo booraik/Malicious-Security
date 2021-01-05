@@ -26,7 +26,7 @@ script/firewall_ipset.sh
 # Scheduling
 ```
 # update latest version && fail2ban ssh to blacklist && flush all ipset && apply blacklist ip
-0 0 * * 0 /root/github/Malicious-Security/script/crontab.sh /root/github/Malicious-Security/
+0 0 * * 0 /root/github/Malicious-Security/script/crontab.sh /root/github/Malicious-Security/ > /var/log/malicious-security.log 2>&1
 ```
 
 # Script

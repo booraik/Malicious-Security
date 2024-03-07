@@ -28,6 +28,9 @@ script/firewall_ipset.sh
 # update latest version && fail2ban ssh to blacklist && flush all ipset && apply blacklist ip
 0 0 * * 0 /root/github/Malicious-Security/script/crontab.sh /root/github/Malicious-Security/ > /var/log/malicious-security.log 2>&1
 ```
+> Try to clone from ssh and set system git config in local for crontab  
+> `git config --system user.email xxx`  
+> `git config --system. user.name xxx`  
 
 # Script
 
